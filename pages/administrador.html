@@ -30,60 +30,37 @@
             </div>
           </nav>
     </header>
-    <main class="container my-5">
+    <main class="container-fluid">
+      <section class="container">
+          <h1>Administar peliculas</h1>
+          <button type="button" class="btn btn-primary" id="btnAgregar">
+            Agregar
+          </button>
+          <div class="table-responsive-sm">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Titulo</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">URL</th>
+                  <th scope="col">Genero</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+      </section>
+            
         
-            <h1>Administar peliculas</h1>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPeliculas">
-                Agregar
-              </button>
-        
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">URL</th>
-                    <th scope="col">Genero</th>
-                    <th scope="col">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Scoot Pilgrim</td>
-                    <td >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, adipisci, vitae esse explicabo recusandae iste nisi quod eligendi molestiae, quos unde optio aliquid sunt expedita dolorem amet tempora quo vel!
-                    </td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                    <td><button class="btn btn-warning mx-1">Editar</button><button class="btn btn-danger">Borrar</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>Otto</td>
-                    <td><button class="btn btn-warning mx-1">Editar</button><button class="btn btn-danger">Borrar</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    <td>Otto</td>
-                    <td><button class="btn btn-warning mx-1">Editar</button><button class="btn btn-danger">Borrar</button></td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
     </main>
-  <div class="modal fade" id="modalPeliculas" tabindex="-1" aria-labelledby="modalPeliculasLabel" aria-hidden="true">
+  <div class="modal fade" id="modalPelicula" tabindex="-1" aria-labelledby="modalPeliculaLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="modalPeliculasLabel">Agregar pelicula</h1>
+          <h1 class="modal-title fs-5" id="modalPeliculaLabel">Agregar pelicula</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -96,15 +73,15 @@
                 </div>
                 <div class="mb-3">
                   <label for="titulo" class="form-label">Titulo</label>
-                  <input type="text" class="form-control" id="titulo">
+                  <input type="text" maxlength="20" class="form-control" id="titulo" required>
                 </div>
                 <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripcion</label>
-                    <textarea name="descripcion" id="descripcion" class="form-control" cols="30" rows="4"></textarea>
+                    <textarea name="descripcion" maxlength="150" id="descripcion" class="form-control" cols="30" rows="4" required></textarea>
                   </div>
                   <div class="mb-3">
                     <label for="url" class="form-label">URL</label>
-                    <input type="text" class="form-control" id="url">
+                    <input type="text" maxlength="20" class="form-control" id="url" required>
                   </div>
                   <div class="mb-3">
                     <label for="genero" class="form-label">Genero</label>
@@ -119,9 +96,6 @@
                   </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
-
-
-
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -135,5 +109,6 @@
     </footer>
       <script src="../js/administrador.js" type="module"></script>
       <script src="../js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
 </body>
 </html>
